@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leu-lee <leu-lee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hgabriel <hgabriel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 15:18:54 by hgabriel          #+#    #+#             */
-/*   Updated: 2022/04/11 11:54:44 by leu-lee          ###   ########.fr       */
+/*   Updated: 2022/04/13 00:54:23 by hgabriel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,41 +33,6 @@ static void	freenull(char **str)
 		*str = 0;
 	}
 }
-
-// static char	*gnl_output(char **str)
-// {
-// 	size_t	i;
-// 	char	*ret;
-// 	char	*temp;
-
-// 	i = 0;
-// 	if (*str)
-// 	{
-// 		while ((*str)[i] && (*str)[i] != '\n')
-// 			i++;
-// 		if ((*str)[i])
-// 		{
-// 			ret = ft_substr(*str, 0, i + 1);
-// 			temp = ft_substr(*str, i + 1, ft_strlen(*str));
-// 			free(*str);
-// 			if (temp[0] != '\0')
-// 				*str = temp;
-// 			else
-// 			{
-// 				free(temp);
-// 				*str = NULL;
-// 			}
-// 		}
-// 		else
-// 		{
-// 			ret = ft_substr(*str, 0, ft_strlen(*str));
-// 			free(*str);
-// 			*str = NULL;
-// 		}
-// 		return (ret);
-// 	}
-// 	return (NULL);
-// }
 
 static char	*gnl_output(char **str)
 {
