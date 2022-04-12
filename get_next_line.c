@@ -25,10 +25,13 @@ static int	read_bytes(int fd, char **buf, int *bytes_read)
 	return (i);
 }
 
-static void	freenull(char *freed, char *nulled)
+static void	freenull(char **str)
 {
-	free(freed);
-	*nulled = NULL;
+	if (str)
+	{
+		free(*str);
+		*str = 0;
+	}
 }
 
 // static char	*gnl_output(char **str)
@@ -81,16 +84,16 @@ static char	*gnl_output(char **str)
 		{
 			ret = ft_substr(*str, 0, i + 1);
 			temp = ft_substr(*str, i + 1, ft_strlen(*str));
-			free(*str);
+			freenull(str);
 			if (temp[0] != '\0')
 				*str = temp;
 			else
-				freenull(temp, *str);
+				freenull(&temp);
 		}
 		else
 		{
 			ret = ft_substr(*str, 0, ft_strlen(*str));
-			freenull(*str, *str);
+			freenull(str);
 		}
 		return (ret);
 	}
