@@ -6,7 +6,7 @@
 /*   By: hgabriel <hgabriel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 15:18:54 by hgabriel          #+#    #+#             */
-/*   Updated: 2022/04/13 00:54:23 by hgabriel         ###   ########.fr       */
+/*   Updated: 2022/05/01 10:57:45 by hgabriel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,10 @@ static char	*gnl_output(char **str)
 				*str = temp;
 			else
 				freenull(&temp);
+			return (ret);
 		}
-		else
-		{
-			ret = ft_substr(*str, 0, ft_strlen(*str));
-			freenull(str);
-		}
+		ret = ft_substr(*str, 0, ft_strlen(*str));
+		freenull(str);
 		return (ret);
 	}
 	return (NULL);
